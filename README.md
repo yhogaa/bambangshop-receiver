@@ -68,16 +68,16 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement list_all_as_string function in Notification repository.`
     -   [x] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Commit: `Implement receive_notification function in Notification service.`
-    -   [ ] Commit: `Implement receive function in Notification controller.`
-    -   [ ] Commit: `Implement list_messages function in Notification service.`
-    -   [ ] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Commit: `Implement receive_notification function in Notification service.`
+    -   [x] Commit: `Implement receive function in Notification controller.`
+    -   [x] Commit: `Implement list_messages function in Notification service.`
+    -   [x] Commit: `Implement list function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -91,3 +91,9 @@ Pada tutorial ini, RwLock<> digunakan untuk mengizinkan banyak reader sekaligus 
    Penggunaan library external lazy_static dalam tutorial ini untuk mendefinisikan Vec dan DashMap sebagai variabel "static" karena Rust tidak mengizinkan perubahan konten dari variabel statik melalui fungsi statik. Hal ini merupakan salah satu dari prinsip keamanan Rust yang melarang perubahan data secara langsung pada variabel statik untuk mencegah kesalahan yang terjadi akibat mutasi data yang tidak terduga. Rust memilih untuk menerapkan prinsip ini untuk menghindari potensi bug dan meningkatkan keamanan program secara keseluruhan.
 
 #### Reflection Subscriber-2
+1. **Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.** </br>
+Dari `src/lib.rs` terdapat konfigurasi dan dependasi untuk aplikasi. Ada juga inisialisasi REQWEST_CLIENT dan APP_CONFIG yang digunakan pada code untuk membuat HTTP request dan configure data aplikasi. INtinya, `src/lib.rs` ini berfungsi untuk mendefinisikan komponen-komponen yang diperlukan pada aplikasi. 
+2. **Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?** </br>
+   Penerapan Observer pattern memudahkan penambahan subscriber baru pada sistem notifikasi karena subscriber hanya perlu mendaftar pada subject untuk menerima notifikasi yang sesuai. Apabila ingin spawning lebih darii 1 instance Main app juga akan mudah dilakukan karena terdapat parallel processing untuk notificationnya, yang membuat kode lebih efisien.
+3. **Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).** </br>
+Saya belum mencoba membuat test saya sendiri, tapi menurut saya fitur ini akan membantu saya pada saat mengerjakan TK adpro nantinya karena dapat lebih mduah untuk test API endpoint dan responnya secara automate.
